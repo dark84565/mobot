@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MobotApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MobotApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(MobotApplication.class, args);
+  }
 }
