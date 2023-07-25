@@ -47,7 +47,7 @@ public class MoBotSignatureValidator extends OncePerRequestFilter {
       String lineSignature = request.getHeader("x-line-signature");
 
       if (signature.equals(lineSignature)) {
-        log.info("Validated successfully.");
+        log.info("Validation success.");
         filterChain.doFilter(cacheRequest, response);
       }
     } catch (NoSuchAlgorithmException | InvalidKeyException e) {
