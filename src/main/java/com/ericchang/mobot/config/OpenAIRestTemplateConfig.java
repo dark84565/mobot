@@ -14,7 +14,7 @@ public class OpenAIRestTemplateConfig {
 
   @Bean
   @Qualifier("openaiRestTemplate")
-  public RestTemplate openiRestTemplate() {
+  public RestTemplate openaiRestTemplate() {
     RestTemplate restTemplate = new RestTemplate();
     restTemplate
         .getInterceptors()

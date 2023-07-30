@@ -1,9 +1,9 @@
-package com.ericchang.mobot.aop;
+package com.ericchang.mobot.filter;
 
 import static com.ericchang.mobot.exception.LineServiceError.LINE_SIGNATURE_INVALID;
 
-import com.ericchang.mobot.cachedreqeust.CachedBodyHttpServletRequest;
 import com.ericchang.mobot.exception.MoBotException;
+import com.ericchang.mobot.http.CachedBodyHttpServletRequest;
 import com.google.common.io.ByteSource;
 import com.linecorp.bot.spring.boot.LineBotProperties;
 import jakarta.servlet.FilterChain;
@@ -47,7 +47,7 @@ public class MoBotSignatureValidator extends OncePerRequestFilter {
       String lineSignature = request.getHeader("x-line-signature");
 
       if (signature.equals(lineSignature)) {
-        log.info("Validation success.");
+        log.info("The validation of Line Signature was success.");
         filterChain.doFilter(cacheRequest, response);
       }
     } catch (NoSuchAlgorithmException | InvalidKeyException e) {

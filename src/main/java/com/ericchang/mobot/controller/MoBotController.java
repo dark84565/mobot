@@ -1,6 +1,6 @@
 package com.ericchang.mobot.controller;
 
-import static com.ericchang.mobot.constant.ChatGptConstant.OPENAI_URI;
+import static com.ericchang.mobot.constant.OpenAIConstant.OPENAI_URI;
 import static com.ericchang.mobot.exception.ChatGptError.CHATGPT_NULL_RESPONSE_EXCEPTION;
 import static java.util.Objects.isNull;
 import static org.springframework.util.CollectionUtils.isEmpty;
@@ -29,7 +29,7 @@ public class MoBotController {
   }
 
   private TextMessage handleTextContent(MessageEvent<TextMessageContent> event) {
-    log.info("Post request to openai.");
+    log.info("Post request to OpenAI from id: [{}]", event.getMessage().getId());
     ChatResponse response =
         restTemplate.postForObject(
             OPENAI_URI, new ChatRequest(event.getMessage().getText()), ChatResponse.class);

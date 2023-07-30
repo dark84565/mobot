@@ -1,4 +1,4 @@
-package com.ericchang.mobot.cachedreqeust;
+package com.ericchang.mobot.http;
 
 import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.http.HttpServletRequest;
