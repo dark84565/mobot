@@ -1,6 +1,6 @@
 package com.ericchang.mobot.filter;
 
-import static com.ericchang.mobot.exception.LineServiceError.LINE_SIGNATURE_INVALID;
+import static com.ericchang.mobot.exception.ValidationError.LINE_SIGNATURE_INVALID;
 
 import com.ericchang.mobot.exception.MoBotException;
 import com.ericchang.mobot.http.CachedBodyHttpServletRequest;

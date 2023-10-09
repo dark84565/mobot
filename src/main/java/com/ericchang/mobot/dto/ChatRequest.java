@@ -1,7 +1,7 @@
 package com.ericchang.mobot.dto;
 
-import static com.ericchang.mobot.constant.OpenAIConstant.OPENAI_MAX_TOKEN;
-import static com.ericchang.mobot.constant.OpenAIConstant.OPENAI_MODEL;
+import static com.ericchang.mobot.constant.OpenAiConstant.OPENAI_MAX_TOKEN;
+import static com.ericchang.mobot.constant.OpenAiConstant.OPENAI_MODEL;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
