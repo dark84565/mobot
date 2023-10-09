@@ -18,8 +18,8 @@ public class MoBotController {
   @EventMapping()
   public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
     return switch (event.getMessage().getText()) {
-      case "Financial News" -> moBotService.handleWebCrawlerRequest(event);
-      case "Weather", "StockMarket" -> new TextMessage("Coming soon.");
+      case "Financial News" -> moBotService.handleWebCrawlerRequest();
+      case "Weather", "Stock Market" -> new TextMessage("Coming soon.");
       default -> moBotService.handleChatGptRequest(event);
     };
   }

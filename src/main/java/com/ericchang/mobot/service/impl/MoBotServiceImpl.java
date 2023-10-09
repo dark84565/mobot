@@ -41,13 +41,18 @@ public class MoBotServiceImpl implements MoBotService {
   }
 
   @Override
-  public TextMessage handleWebCrawlerRequest(MessageEvent<TextMessageContent> event) {
+  public TextMessage handleWebCrawlerRequest() {
     List<FinancialNewsData> financialNewsList =
-        financialNewsDtoMapper.fromResponse(moBotWebClient.getFinancialNews()).stream()
-            .filter(news -> news.getDate().equals(LocalDate.now()))
-            .toList();
+        financialNewsDtoMapper.fromResponse(moBotWebClient.getFinancialNews());
 
-    return new TextMessage(generateFinancialNewsMessage(financialNewsList));
+    List<FinancialNewsData> responseNews =
+        financialNewsList.get(0).getDate().equals(LocalDate.now())
+            ? financialNewsList.stream()
+                .filter(news -> news.getDate().equals(LocalDate.now()))
+                .toList()
+            : financialNewsList.stream().limit(20).toList();
+
+    return new TextMessage(generateFinancialNewsMessage(responseNews));
   }
 
   private String generateFinancialNewsMessage(List<FinancialNewsData> financialNewsList) {

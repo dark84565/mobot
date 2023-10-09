@@ -7,5 +7,5 @@ import com.linecorp.bot.model.message.TextMessage;
 public interface MoBotService {
   TextMessage handleChatGptRequest(MessageEvent<TextMessageContent> event);
 
-  TextMessage handleWebCrawlerRequest(MessageEvent<TextMessageContent> event);
+  TextMessage handleWebCrawlerRequest();
 }
